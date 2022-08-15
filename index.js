@@ -26,4 +26,4 @@ app.use('/api/item-reports', itemReportRoute);
 app.use('/api/fornecedores', fornecedorRoute);
 app.use(handle404Error);
 app.use(handleError);
-app.listen(process.env.PORTA, () => { console.log('rodando') })
+app.listen(3000, () => { console.log('rodando') })
