@@ -11,7 +11,11 @@ const entradaRoute = require('./src/routes/entrada.route');
 const saidaRoute = require('./src/routes/saida.route');
 const itemReportRoute = require('./src/routes/item-report.route');
 const handleError = require('./src/middlewares/handleError');
+const swaggerFile = require('./documentation/swagger_output.json')
+const swaggerUi = require('swagger-ui-express');
 
+
+app.use('/api/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/api/usuarios', usuarioRoute);
